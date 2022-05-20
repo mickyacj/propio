@@ -1,0 +1,20 @@
+Public Class Form1
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim a, b, c As Integer
+        a = Convert.ToInt32(TextBox1.Text)
+        b = Convert.ToInt32(TextBox2.Text)
+        c = a + b
+        If c > 10 Then GoTo gmayor10 Else GoTo gimprime
+gmayor10:
+        TextBox3.Text = "Mayor a 10"
+        GoTo salir
+gimprime:
+        TextBox3.Text = c.ToString()
+salir:
+    End Sub
+End Class
