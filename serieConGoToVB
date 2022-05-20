@@ -1,0 +1,59 @@
+Public Class Form1
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim n, c, c1, max1, sw As Integer
+        Dim cad As String
+        c = 1
+        c1 = 0
+        max1 = 1
+        sw = 1
+
+        n = Convert.ToInt32(TextBox1.Text)
+        cad = "0"
+inicio:
+        If n > 1 And c < n Then
+            GoTo mayor1
+        ElseIf n = 1 Then
+            GoTo atomico
+        Else
+            GoTo fin
+        End If
+atomico:
+        TextBox2.Text = cad
+        GoTo fin
+
+mayor1:
+        If sw = 1 Then
+            cad = cad + "," + "1"
+            c = c + 1
+            c1 = c1 + 1
+            TextBox2.Text = cad
+            If c1 = max1 Then
+                sw = 0
+                max1 = max1 + 1
+                c1 = 0
+            End If
+            GoTo inicio
+        ElseIf sw = 0 Then
+            cad = cad + "," + "0"
+            c = c + 1
+            TextBox2.Text = cad
+            sw = 1
+            'max1 = max1 + 1
+            GoTo inicio
+
+        End If
+
+fin:
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        End
+    End Sub
+End Class
